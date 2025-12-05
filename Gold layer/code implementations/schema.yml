@@ -1,0 +1,35 @@
+version: 2
+
+models:
+
+  - name: dim_airlines
+    description: "Dimension table for Airlines."
+
+  - name: dim_airports
+    description: "Dimension table for Airports."
+
+  - name: dim_date
+    description: "Dimension table for Dates."
+
+
+  - name: fact_flights
+    description: "Fact table for flight performance analytics."
+
+  - name: gold_flight_metrics
+    description: "Aggregated flight performance metrics including delays, cancellations, and trends."
+    columns:
+      - name: metric_date
+        description: "Date for which metrics were calculated."
+        tests:
+          - not_null
+          - unique
+
+  - name: gold_monthly_metrics
+    columns:
+      - name: month_date
+        tests: [ not_null, unique ]
+
+  - name: gold_quarterly_metrics
+    columns:
+      - name: metric_quarter
+        tests: [ not_null, unique ]

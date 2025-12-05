@@ -1,0 +1,86 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: aviation_project
+    schema: airlines
+    tables:
+      - name: silver_flights_latest_temp
+        identifier: SILVER_FLIGHTS_LATEST_TEMP   # EXACT Snowflake table name
+    # must match Snowflake table name exactly
+
+
+models:
+
+
+  - name: silver_airlines
+    columns:
+      - name: IATA_CODE
+        tests:
+          - not_null
+          - unique
+
+  - name: silver_airports
+    columns:
+      - name: IATA_CODE
+        tests:
+          - not_null
+
+      - name: CITY
+        tests:
+          - not_null
+
+      - name: STATE
+        tests:
+          - not_null
+
+      - name: COUNTRY
+        tests:
+          - not_null
+
+  - name: silver_flights_sample
+    columns:
+      - name: YEAR
+        tests:
+          - not_null
+
+      - name: MONTH
+        tests:
+          - not_null
+
+      - name: DAY
+        tests:
+          - not_null
+
+      - name: AIRLINE
+        tests:
+          - not_null
+
+      - name: ORIGIN_AIRPORT
+        tests:
+          - not_null
+
+      - name: DESTINATION_AIRPORT
+        tests:
+          - not_null
+
+      - name: DEPARTURE_DELAY
+        tests:
+          - not_null
+
+      - name: ARRIVAL_DELAY
+        tests:
+          - not_null
+
+      - name: TOTAL_DELAY
+        tests:
+          - not_null
+
+      - name: DELAY_CATEGORY
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['NO_DELAY', 'SHORT', 'MEDIUM', 'LONG']
+
+
+  
