@@ -1,0 +1,22 @@
+LOG_TIME,PROCESS_NAME,STEP_NAME,DATASET_NAME,ROW_COUNT_BEFORE,ROW_COUNT_AFTER,MESSAGE,STATUS
+2025-11-26 01:23:14.218,SNOWPARK,CLEANING & STANDARDIZATION,AIRLINES,14,14,"Uppercasing codes, trimming names, adding load timestamp",SUCCESS
+2025-11-26 01:23:38.703,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.silver_airlines,,14,Applied dbt transformations for this model,SUCCESS
+2025-11-26 01:28:13.305,SNOWPARK,CLEANING & STANDARDIZATION,AIRPORTS,299,299,"CITY normalized, STATE uppercased, COUNTRY uppercased, latitude-longitude cast, null rows removed",SUCCESS
+2025-11-26 01:29:01.194,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.silver_airports,,299,Applied dbt transformations for this model,SUCCESS
+2025-11-26 01:29:23.394,SNOWPARK,FLIGHTS SAMPLE CLEANING,FLIGHTS_SAMPLE,195,195,"Type casting, uppercasing, null handling, delay category creation",SUCCESS
+2025-11-26 01:30:49.542,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.silver_flights_sample,,195,Applied dbt transformations for this model,SUCCESS
+2025-11-26 03:35:25.797,SNOWPARK,CLEANING,AIRPORTS,299,299,"Basic cleaning: CITY initcap, STATE/COUNTRY uppercased, lat/lon cast, null rows removed",SUCCESS
+2025-11-26 03:37:31.990,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.silver_airports,,299,Applied dbt transformations for this model,SUCCESS
+2025-11-26 03:39:05.066,SNOWPARK,CLEANING,FLIGHTS_SAMPLE,195,195,"Cleaned raw data, computed TOTAL_DELAY",SUCCESS
+2025-11-26 03:40:29.235,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.silver_flights_sample,,195,Applied dbt transformations for this model,SUCCESS
+2025-11-26 09:23:22.184,SNOWPARK,CLEANING,FLIGHTS_LATEST,198,198,"Cleaned raw data for latest flights, computed TOTAL_DELAY",SUCCESS
+2025-11-26 10:33:02.668,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.scd2_flights,,393,Applied dbt transformations for this model,SUCCESS
+2025-11-26 10:46:56.821,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.scd2_flights,,393,Applied dbt transformations for this model,SUCCESS
+2025-11-26 11:15:50.302,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.silver_flights_latest,,198,Applied dbt transformations for this model,SUCCESS
+2025-11-26 11:20:48.307,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.silver_flights_latest,,198,Applied dbt transformations for this model,SUCCESS
+2025-11-26 12:04:27.755,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.silver_airlines,,14,Applied dbt transformations for this model,SUCCESS
+2025-11-26 12:04:28.963,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.silver_airports,,299,Applied dbt transformations for this model,SUCCESS
+2025-11-26 12:04:29.973,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.silver_flights_latest,,198,Applied dbt transformations for this model,SUCCESS
+2025-11-26 23:26:07.382,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.test_clean,,1,Applied dbt transformations for this model,SUCCESS
+2025-11-27 05:45:15.726,SNOWPARK,CLEANING,FLIGHTS_SAMPLE,294,294,"Cleaned raw data, computed TOTAL_DELAY",SUCCESS
+2025-11-27 05:46:11.692,DBT,DBT BUSINESS LOGIC,BRONZE_LAYER.BRONZE.silver_flights_sample,,294,Applied dbt transformations for this model,SUCCESS
