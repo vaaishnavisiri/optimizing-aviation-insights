@@ -48,6 +48,7 @@ aviation-data-bucket-2025/
          ├── flights_historical/
          └── flights_latest/
 The four CSV datasets are uploaded into their respective folders.
+then AWS glue is used to convert csv files to parquet files using pyspart etl scripts.
 
 ## **2. Snowflake Storage Integration**
 The integration allows Snowflake to read files from the S3 raw folder.
